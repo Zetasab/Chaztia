@@ -533,8 +533,13 @@ function App() {
                     <Bot className="size-4" />
                   </AvatarFallback>
                 </Avatar>
-                <Card className="max-w-[80%] px-3 py-2 text-sm text-muted-foreground">
-                  Escribiendo...
+                <Card className="flex max-w-[80%] flex-row items-center gap-1 px-3 py-2 text-sm text-muted-foreground">
+                  Escribiendo
+                  <span className="flex items-end gap-0.5">
+                    <span className="thinking-dot size-1 rounded-full bg-current" />
+                    <span className="thinking-dot size-1 rounded-full bg-current" />
+                    <span className="thinking-dot size-1 rounded-full bg-current" />
+                  </span>
                 </Card>
               </div>
             )}
@@ -548,7 +553,7 @@ function App() {
           )}
         >
           {!started && (
-            <p className="mb-2 text-center text-lg font-medium text-muted-foreground duration-500 animate-in fade-in">
+            <p className="mb-8 text-center text-lg font-medium text-muted-foreground duration-500 animate-in fade-in">
               ¿En qué puedo ayudarte{userName.trim() ? `, ${userName.trim()}` : ''}?
             </p>
           )}
@@ -610,7 +615,13 @@ function App() {
               >
                 <Paperclip className="size-4" />
               </Button>
-              <div className="relative flex-1">
+              <div className="gemini-glow-wrapper relative flex-1">
+                {!started && (
+                  <div
+                    aria-hidden="true"
+                    className="gemini-glow pointer-events-none absolute -inset-4 z-0 rounded-full blur-xl"
+                  />
+                )}
                 <Input
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
@@ -618,13 +629,14 @@ function App() {
                   placeholder="Escribe tu mensaje..."
                   disabled={loading}
                   autoFocus
-                  className="h-11 bg-background pr-11 pl-4 text-base shadow-sm"
+                  style={{ backgroundColor: 'var(--background)' }}
+                  className="relative z-10 h-11 pr-11 pl-4 text-base shadow-sm"
                 />
                 <Button
                   onClick={sendMessage}
                   disabled={loading || (!input.trim() && pendingAttachments.length === 0)}
                   size="icon"
-                  className="absolute top-1/2 right-1 size-8 -translate-y-1/2 cursor-pointer"
+                  className="absolute top-1/2 right-1 z-10 size-8 -translate-y-1/2 cursor-pointer"
                 >
                   <Send className="size-4" />
                 </Button>
