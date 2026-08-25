@@ -7,7 +7,7 @@ type ChatMessage = {
   role: 'system' | 'user' | 'assistant'
   content: string
 }
-
+ 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== 'POST') {
     res.setHeader('Allow', 'POST')
