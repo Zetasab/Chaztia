@@ -25,6 +25,7 @@ import {
 } from '@/components/ui/dialog'
 import { Label } from '@/components/ui/label'
 import { ChatMarkdown } from '@/components/chat-markdown'
+import { startVisitTracking } from '@/services/visitTrackingService'
 import { cn } from '@/lib/utils'
 
 type Attachment = {
@@ -173,7 +174,7 @@ function App() {
   const [started, setStarted] = useState(false)
   const [preferencesOpen, setPreferencesOpen] = useState(false)
   const [theme, setTheme] = useState<Theme>(
-    () => (localStorage.getItem(THEME_KEY) as Theme | null) ?? 'light'
+    () => (localStorage.getItem(THEME_KEY) as Theme | null) ?? 'dark'
   )
   const [userName, setUserName] = useState(
     () => localStorage.getItem(USER_NAME_KEY) ?? ''
@@ -190,6 +191,7 @@ function App() {
 
   useEffect(() => {
     applyTheme(theme)
+    startVisitTracking()
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
