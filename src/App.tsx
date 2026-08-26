@@ -25,6 +25,7 @@ import {
 } from '@/components/ui/dialog'
 import { Label } from '@/components/ui/label'
 import { ChatMarkdown } from '@/components/chat-markdown'
+import { InfoMenu } from '@/components/info-menu'
 import { startVisitTracking } from '@/services/visitTrackingService'
 import { cn } from '@/lib/utils'
 
@@ -648,6 +649,8 @@ function App() {
           {error && <p className="text-center text-sm text-destructive">{error}</p>}
         </div>
       </div>
+
+      <InfoMenu />
     </div>
   )
 }

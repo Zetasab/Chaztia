@@ -1,0 +1,17 @@
+{
+  "name": "Chaztia - Chatea con IA",
+  "short_name": "Chaztia",
+  "description": "Chaztia es un asistente de chat con IA, rápido y sencillo, pensado para desarrolladores.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#141414",
+  "theme_color": "#141414",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "768x768",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
