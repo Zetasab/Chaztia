@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 
 const LINKEDIN_URL = 'https://www.linkedin.com/in/cesar-sobrino-arribas-1b887021b/'
-const GITHUB_URL = 'https://github.com/Zetasab'
+const GITHUB_URL = 'https://github.com/Zetasab/Chaztia'
 
 export function InfoMenu() {
   const [open, setOpen] = useState(false)
