@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils'
 
 const LINKEDIN_URL = 'https://www.linkedin.com/in/cesar-sobrino-arribas-1b887021b/'
 const GITHUB_URL = 'https://github.com/Zetasab/Chaztia'
-const EMAIL_ADDRESS = 'cesarsobworkspace@gmail.com'
+const EMAIL_ADDRESS = 'cesarsobrinoarribas@gmail.com'
 
 export function InfoMenu() {
   const [open, setOpen] = useState(false)
