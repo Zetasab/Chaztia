@@ -1,10 +1,11 @@
 import { useEffect, useRef, useState } from 'react'
-import { Info, Link2, Code2, ShieldCheck } from 'lucide-react'
+import { Info, Link2, Code2, Mail, ShieldCheck } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 
 const LINKEDIN_URL = 'https://www.linkedin.com/in/cesar-sobrino-arribas-1b887021b/'
 const GITHUB_URL = 'https://github.com/Zetasab/Chaztia'
+const EMAIL_ADDRESS = 'cesarsobworkspace@gmail.com'
 
 export function InfoMenu() {
   const [open, setOpen] = useState(false)
@@ -40,6 +41,13 @@ export function InfoMenu() {
       label: 'Ver GitHub',
       icon: Code2,
       onClick: () => window.open(GITHUB_URL, '_blank', 'noopener,noreferrer'),
+    },
+    {
+      label: 'Enviar correo',
+      icon: Mail,
+      onClick: () => {
+        window.location.href = `mailto:${EMAIL_ADDRESS}`
+      },
     },
     {
       label: 'Política de privacidad',
